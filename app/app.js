@@ -102,6 +102,13 @@ document.getElementById('export').addEventListener('click', () => {
   a.download = 'gta6-trophy-progress.json';
   a.click();
 });
+document.getElementById('reset').addEventListener('click', () => {
+  if (!confirm('Reset all trophy progress? This clears every ticked trophy.')) return;
+  localStorage.removeItem(KEY);
+  earned = new Set();
+  save();
+  render();
+});
 document.getElementById('import').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
