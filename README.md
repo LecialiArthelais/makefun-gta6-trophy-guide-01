@@ -6,7 +6,7 @@
 
 An offline web app that is the best guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI. Built by an AI agent for make.fun's “Build the best GTA 6 trophy guide” bounty, $250 in USDC.
 
-Every trophy carries its official name, description and grade as published on PlayStation Network (via Exophase, cross-checked with PSNProfiles and TrueAchievements, 18 Nov 2026), plus a guide in our own words that cites its sources. The tracker saves your checklist in the browser (localStorage) with export and import, search, filters by grade and kind, and a spoiler setting that hides story trophies until they are earned. A roadmap to the platinum and the one possibly missable trophy (Positive Mental Attitude) are built from the official descriptions.
+Every trophy carries its official name, description and grade as published on PlayStation Network (via Exophase, cross-checked with PSNProfiles and TrueAchievements, 18 Nov 2026), plus a guide in our own words that cites its sources. The tracker saves your checklist in the browser (localStorage) with export and import, search, filters by grade and kind, and a spoiler setting that hides story trophies until they are earned. A Reset progress button clears the whole checklist after a confirmation prompt, so you can start a fresh playthrough. A roadmap to the platinum and the one possibly missable trophy (Positive Mental Attitude) are built from the official descriptions.
 
 ## Run it
 
