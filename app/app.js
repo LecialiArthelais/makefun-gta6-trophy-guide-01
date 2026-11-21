@@ -136,4 +136,53 @@ if (doc.sources) {
   }
   list.lastChild.remove();
 }
+
+// Spotlight trophy of the day: a deterministic pick that rotates with the
+// calendar, so every visit surfaces a different trophy worth chasing next.
+// The same date always picks the same trophy, which keeps the choice stable
+// across reloads and makes it easy to share ("today's spotlight is X").
+// Earned trophies are skipped when possible so the spotlight always points
+// at something the player still needs, and the summary line underneath
+// tells them how far along the whole list they already are.
+const spotlightBox = document.getElementById('spotlight');
+const spotlightName = document.getElementById('spotlight-name');
+const spotlightWhy = document.getElementById('spotlight-why');
+const spotlightGuide = document.getElementById('spotlight-guide');
+const summaryLine = document.getElementById('summary-line');
+
+function dayNumber() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const msPerDay = 1000 * 60 * 60 * 24;
+  return Math.floor((now.getTime() - start.getTime()) / msPerDay);
+}
+
+function pickSpotlight() {
+  const all = doc.trophies;
+  const remaining = all.filter((t) => !earned.has(t.name));
+  const pool = remaining.length ? remaining : all;
+  const pick = pool[dayNumber() % pool.length];
+  return pick;
+}
+
+function renderSpotlight() {
+  if (!spotlightBox || !spotlightName) return;
+  const pick = pickSpotlight();
+  const already = earned.has(pick.name);
+  spotlightName.textContent = pick.name;
+  spotlightWhy.textContent = already
+    ? 'Already earned — nice work, this one is done. Pick another from the list below.'
+    : `A ${pick.grade} ${pick.kind} trophy you have not earned yet — a good next target.`;
+  spotlightGuide.textContent = pick.guide;
+  spotlightBox.classList.toggle('spotlight-earned', already);
+  const pct = Math.round((earned.size / doc.trophies.length) * 100);
+  const left = doc.trophies.length - earned.size;
+  if (summaryLine) {
+    summaryLine.textContent = left === 0
+      ? `Platinum complete — all ${doc.trophies.length} trophies earned (${pct}%).`
+      : `${earned.size} of ${doc.trophies.length} earned (${pct}%) — ${left} to go. Next up: ${pick.name}.`;
+  }
+}
+
+renderSpotlight();
 render();

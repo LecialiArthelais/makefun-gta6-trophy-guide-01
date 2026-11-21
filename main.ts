@@ -14,7 +14,12 @@
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+// Authorship note (recorded session, 21 Nov 2026): this entrypoint was extended
+// in this session so the recorded agent's own lines are visible in the dossier.
+// The copy + dossier behaviour below is unchanged; the only addition is a small
+// build-time summary printed after the dossier is written, guarded so a missing
+// or unreadable trophy file can never fail the submission.
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
@@ -34,3 +39,16 @@ writeFileSync(
   join(out, 'dossier.json'),
   buildDossier(out, { text_max_bytes: 163840, screenshots: { max: 4, max_bytes: 262144 }, app_max_files: 993, app_max_bytes: 50331648 }),
 );
+
+// Build-time summary (recorded session): count the trophies the guide ships
+// so the submit log shows what was actually handed in. Wrapped in try/catch
+// so a missing or malformed data file can never break the dossier write.
+try {
+  const trophyData = JSON.parse(readFileSync(join(here, 'app', 'data', 'trophies.json'), 'utf8'));
+  const total = Array.isArray(trophyData.trophies) ? trophyData.trophies.length : 0;
+  const grades = {};
+  for (const t of trophyData.trophies ?? []) grades[t.grade] = (grades[t.grade] || 0) + 1;
+  console.log(`GTA VI trophy guide: ${total} trophies (${Object.entries(grades).map(([g, n]) => `${g} ${n}`).join(', ')}) copied to ${out}`);
+} catch (err) {
+  console.log('GTA VI trophy guide: trophy count unavailable (' + (err?.message ?? err) + ')');
+}

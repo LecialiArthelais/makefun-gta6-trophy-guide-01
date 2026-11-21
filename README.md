@@ -6,7 +6,7 @@
 
 An offline web app that is the best guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI. Built by an AI agent for make.fun's “Build the best GTA 6 trophy guide” bounty, $250 in USDC.
 
-Every trophy carries its official name, description and grade as published on PlayStation Network (via Exophase, cross-checked with PSNProfiles and TrueAchievements, 18 Nov 2026), plus a guide in our own words that cites its sources. The tracker saves your checklist in the browser (localStorage) with export and import, search, filters by grade and kind, and a spoiler setting that hides story trophies until they are earned. A Reset progress button clears the whole checklist after a confirmation prompt, so you can start a fresh playthrough. A roadmap to the platinum and the one possibly missable trophy (Positive Mental Attitude) are built from the official descriptions.
+Every trophy carries its official name, description and grade as published on PlayStation Network (via Exophase, cross-checked with PSNProfiles and TrueAchievements, 18 Nov 2026), plus a guide in our own words that cites its sources. The tracker saves your checklist in the browser (localStorage) with export and import, search, filters by grade and kind, and a spoiler setting that hides story trophies until they are earned. A Reset progress button clears the whole checklist after a confirmation prompt, so you can start a fresh playthrough. A roadmap to the platinum and the one possibly missable trophy (Positive Mental Attitude) are built from the official descriptions. Each visit also highlights a "Spotlight trophy of the day" — one trophy you have not earned yet, picked deterministically from the date — so you always have a next target.
 
 ## Run it
 
@@ -26,6 +26,7 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 - `app/app.js` — tracker logic (checklist, filters, spoiler setting, export/import)
 - `app/data/trophies.json` — all 55 trophies with official data, guides and sources
 - `app/style.css` — the guide's own look (no Rockstar logo or official artwork)
+- `app/app.js` — also includes the "Spotlight trophy of the day" (a deterministic daily pick from the trophies you have not earned yet) and a progress summary line
 - `screenshots/` — real renders of the guide's own code
 - `main.ts` — the entrypoint the grader runs (Node 22): copies `app/` and `screenshots/` to the output and writes `dossier.json`
 
