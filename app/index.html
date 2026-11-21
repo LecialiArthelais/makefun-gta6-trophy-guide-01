@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — All 55 PS5 Trophies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>GTA VI Trophy Guide &amp; Tracker</h1>
+    <p class="sub">All 55 PlayStation 5 trophies — official names, descriptions &amp; grades, with a guide to each. Works offline; progress is saved in your browser.</p>
+  </div>
+  <div class="progress-wrap">
+    <p id="progress">0 of 55 earned</p>
+    <div class="bar"><div id="barfill"></div></div>
+    <p id="bygrade" class="bygrade"></p>
+  </div>
+</header>
+
+<section class="callout missable-callout">
+  <strong>⚠ The one possibly missable trophy: Positive Mental Attitude.</strong>
+  Meditate at all 18 spots — one spot is at Jason's house in Chapter 1 (PowerPyx, GTABase). Meditate there before the story moves on and keep a manual save before big missions. No other trophy is confirmed missable.
+</section>
+
+<section class="roadmap">
+  <h2>Roadmap to the Platinum — “Vice Got a Price!”</h2>
+  <ol>
+    <li><strong>1 · Play the story (13 trophies).</strong> Chapters 1–4, the final mission, and the mission trophies (Gone Fishing, Breakfast Run, The Cartel Heist, Child's Play, Headliners, VCIA Takedown, Operation Savage Glory) unlock on their own. Story takes ~60 hours. While in Chapter 1, meditate at Jason's house for Positive Mental Attitude.</li>
+    <li><strong>2 · Strangers (9 trophies).</strong> Play 8 stranger strands to completion (Strangers &amp; Freaks) — each strand's final mission has its own trophy: Andy, Kenton, Billy, Randy, Tyrone, plus Bret's hunt (Fair Game).</li>
+    <li><strong>3 · Activities (8 trophies).</strong> 250 stunts, gold at all 42 Shooting Range challenges, 20 different races, Top Fun drone races at all 14 locations, beat Cal at fishing, one arcade game, 50 challenges, and try all 9 activity types once.</li>
+    <li><strong>4 · Crime (8 trophies).</strong> 5 bank vaults, an armored truck, a jewelry store undetected, 3 shops back-to-back with your partner, one illegal operation per gang, 5 enemies in one Combat Focus, a 4-star escape with your partner, $250,000 laundered, $100,000 spent.</li>
+    <li><strong>5 · Collectibles &amp; exploration (10 trophies).</strong> Explore all of Leonida, 100 WAiNK check-ins, 100 vehicles discovered, 3 card sets, all 18 meditation spots, 8 garages, 10 Scooter Bros registrations.</li>
+    <li><strong>6 · Cleanup &amp; 100% (2 trophies).</strong> Check Progress &gt; Stats &gt; 100% Completion in-game (35 tasks). Finish A Long Road, then the Platinum pops.</li>
+  </ol>
+  <p class="note">Cheats disable trophies (PowerPyx) — don't use them on your platinum save. Every trophy is offline; one playthrough is enough.</p>
+</section>
+
+<div class="controls">
+  <label>Search <input id="search" type="search" placeholder="trophy, mission, keyword…"></label>
+  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Kind <select id="kind"><option value="all">All kinds</option><option value="story">Story</option><option value="missable">Missable</option><option value="stranger">Strangers</option><option value="collectible">Collectibles</option><option value="activity">Activities</option><option value="crime">Crime</option><option value="world">World moments</option><option value="meta">Platinum / 100%</option></select></label>
+  <label class="spoiler"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+</div>
+
+<table>
+  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>Kind</th><th>How to get it</th></tr></thead>
+  <tbody id="rows"></tbody>
+</table>
+
+<footer>
+  <h3>Sources</h3>
+  <p>Official trophy names, descriptions and grades as published on PlayStation Network (via Exophase, cross-checked with PSNProfiles and TrueAchievements, 18 Nov 2026). Guides are written in our own words for this guide; each trophy's guide cites the sources it draws on — PowerPyx, KeenGamer, GTA BOOM, PlanetGTA6. No Rockstar logo or official artwork is used.</p>
+  <p id="sourcelist"></p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

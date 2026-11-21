@@ -1,0 +1,34 @@
+body { font-family: Arial, sans-serif; margin: 24px; color: #222; background: #fff; }
+header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+h1 { margin: 0 0 4px; font-size: 28px; }
+.sub { margin: 0; color: #555; max-width: 640px; }
+.progress-wrap { min-width: 220px; text-align: right; }
+.progress-wrap p { margin: 0 0 6px; font-weight: bold; }
+.bygrade { font-weight: normal; color: #555; font-size: 13px; }
+.bar { height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+.bar div { height: 100%; background: #2e7d32; width: 0; }
+.callout { border: 2px solid #c62828; background: #fdecea; padding: 12px 16px; margin: 16px 0; border-radius: 6px; }
+.roadmap { background: #f7f7f7; border: 1px solid #ddd; border-radius: 6px; padding: 16px 20px; margin: 16px 0; }
+.roadmap h2 { margin: 0 0 8px; font-size: 20px; }
+.roadmap ol { margin: 0; padding-left: 22px; }
+.roadmap li { margin: 6px 0; line-height: 1.45; }
+.note { color: #555; font-size: 13px; }
+.controls { display: flex; gap: 16px; margin: 12px 0; align-items: center; flex-wrap: wrap; }
+.controls input[type="search"] { padding: 4px 8px; width: 220px; }
+.controls select { padding: 4px; }
+.import input { font-size: 12px; }
+.spoiler { font-weight: bold; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border-bottom: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; white-space: pre-line; }
+th { background: #f2f2f2; }
+tr.missable td { background: #fff8e1; }
+.desc { color: #555; font-size: 13px; margin-top: 2px; }
+.sources { color: #777; font-size: 12px; margin-top: 4px; }
+.badge { display: inline-block; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 3px; margin-top: 4px; }
+.missable-badge { background: #c62828; color: #fff; }
+.grade-platinum { font-weight: bold; color: #6a1b9a; }
+.grade-gold { font-weight: bold; color: #b8860b; }
+.grade-silver { font-weight: bold; color: #607d8b; }
+.grade-bronze { font-weight: bold; color: #8d6e63; }
+footer { margin-top: 24px; border-top: 1px solid #ddd; padding-top: 12px; color: #555; font-size: 13px; }
+footer a { color: #1565c0; }
